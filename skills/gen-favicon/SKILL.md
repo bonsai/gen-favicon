@@ -7,11 +7,18 @@ description: Generate the parametric favicon from a GitHub repository URL and pu
 
 The user only needs to provide the GitHub repository URL. Do not ask for the local path when the URL identifies the repository.
 
+Repository locations:
+
+- GitHub: `https://github.com/bonsai/gen-favicon.git`
+- WSL2 Linux: `~/gen-favicon` (`/home/bons/gen-favicon`)
+- Windows UNIpath: `\\wsl.localhost\Ubuntu\home\bons\gen-favicon`
+- Default branch: `main`
+
 ## Workflow
 
 1. Resolve the GitHub URL to the repository.
-2. Use the repository's default branch unless the user specifies another branch.
-3. If the repository is not already available locally, clone it.
+2. Use the repository's default branch (`main`) unless the user specifies another branch.
+3. If the repository is not already available locally, clone it to `~/gen-favicon` (UNIpath `\\wsl.localhost\Ubuntu\home\bons\gen-favicon`).
 4. Run from the repository root.
 5. Generate the favicon with the existing CLI:
 
@@ -35,11 +42,27 @@ The user only needs to provide the GitHub repository URL. Do not ask for the loc
 
 10. Push the current branch:
 
-   ```bash
-   git push
-   ```
+    ```bash
+    git push origin main
+    ```
 
 11. Report the generated path and commit SHA.
+
+## Edge verification (optional)
+
+The Edge extension is a preview surface; generation and publishing are handled by this skill.
+
+```powershell
+start msedge edge://extensions
+```
+
+Developer mode ON → **Load unpacked** → select:
+
+```text
+\\wsl.localhost\Ubuntu\home\bons\gen-favicon\extension
+```
+
+After editing extension sources, click **Reload** on the extension page.
 
 ## Parameters
 
@@ -68,4 +91,3 @@ node bin/gen-favicon.js --width 48 --height 64 --asymmetry 0.06 --tilt -4
 - Do not stage unrelated working-tree changes.
 - Never force-push.
 - If there is nothing to commit, report that the generated artifact is already up to date.
-- The Edge extension is a preview/test surface; generation and publishing are handled by this skill.

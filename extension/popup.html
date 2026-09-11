@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>gen-favicon</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>gen-favicon</h1>
+    <div id="preview" aria-label="egg preview"></div>
+    <label>Width <input id="width" type="number" min="16" max="1024" value="64"></label>
+    <label>Height <input id="height" type="number" min="16" max="1024" value="64"></label>
+    <label>Asymmetry <input id="asymmetry" type="number" min="-0.5" max="0.5" step="0.005" value="0.035"></label>
+    <label>Tilt <input id="tilt" type="number" min="-45" max="45" step="1" value="0"></label>
+    <label>Fill <input id="fill" type="color" value="#ffffff"></label>
+    <label>Stroke <input id="stroke" type="color" value="#111111"></label>
+    <label>Stroke width <input id="strokeWidth" type="number" min="0" max="20" step="0.5" value="2"></label>
+    <div class="actions">
+      <button id="download">Download SVG</button>
+      <button id="copy">Copy SVG</button>
+    </div>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

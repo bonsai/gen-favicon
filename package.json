@@ -1,0 +1,10 @@
+{
+  "name": "@bonsai/gen-favicon",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Parametric egg favicon generator CLI",
+  "bin": { "gen-favicon": "bin/gen-favicon.js" },
+  "scripts": { "generate": "node bin/gen-favicon.js" },
+  "dependencies": { "sharp": "^0.34.3" }
+}

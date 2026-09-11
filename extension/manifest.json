@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "gen-favicon — Parametric Egg",
+  "version": "0.1.0",
+  "description": "Generate a parametric egg favicon locally in Microsoft Edge.",
+  "action": {
+    "default_title": "gen-favicon",
+    "default_popup": "popup.html"
+  }
+}
